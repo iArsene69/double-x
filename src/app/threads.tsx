@@ -22,7 +22,7 @@ export default function Threads({ threads }: { threads: TweetUnionAuthor[] }) {
 
   const router = useRouter();
 
-  const supabase = createClientComponentClient();
+  const supabase = createClientComponentClient<Database>();
 
   useEffect(() => {
     const channel = supabase

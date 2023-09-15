@@ -31,7 +31,7 @@ export default function OriginalThreads({
                 <span className="font-bold">{thr.author.name}</span>
                 <span className="text-sm ml-2 text-gray-400">{thr.author.username}</span>
             </p>
-            <p className="max-w-full">{thr.thread}</p>
+            <p className="max-w-full text-2xl text-left">{thr.thread}</p>
             <Likes threads={thr} addOptimisticThread={addOptimisticThreads} />
         </div>
     </div>

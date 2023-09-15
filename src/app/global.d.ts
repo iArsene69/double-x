@@ -12,18 +12,11 @@ declare global {
     author: Profile;
     likes: number;
     user_has_liked_tweet: boolean;
-    
+    replies: number
   };
 
-  type TweetReply = Tweet & {
-    author: Profile;
-    likes: number;
-    user_has_liked_tweet: boolean;
-    repliesNumber: number;
-    replies: Reply & {
-      profiles: Profile
-    }
-    
+  type ReplyUnionAuthor = Reply & {
+    profile: Profile;
   };
 
   

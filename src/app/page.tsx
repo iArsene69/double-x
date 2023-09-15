@@ -11,7 +11,7 @@ export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies });
   const { data } = await supabase
     .from("threads")
-    .select("*, author: profiles(*), likes(user_id)")
+    .select("*, author: profiles(*), likes(user_id), replies(user_id)")
     .order("created_at", {
       ascending: false,
     });
@@ -30,6 +30,7 @@ export default async function Home() {
         (like) => like.user_id === session?.user.id
       ),
       likes: thread.likes.length,
+      replies: thread.replies.length,
     })) ?? [];
   return (
     <div className="max-w-xl mx-auto text-white">
@@ -42,5 +43,3 @@ export default async function Home() {
     </div>
   );
 }
-
-//sbp_ced01cf565032e996636d0d400876e99be0e969b

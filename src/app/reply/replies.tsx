@@ -53,7 +53,9 @@ export default function Replies({ replies }: { replies: ReplyUnionAuthor[] }) {
           </span>
         </p>
         <p className="max-w-full">{rep.reply}</p>
-        <LazyImage src={rep.image_url} />
+        <div className="w-fit mx-auto">
+          <LazyImage src={rep.image_url} />
+        </div>
       </div>
     </div>
   ));

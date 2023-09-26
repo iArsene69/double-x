@@ -1,5 +1,6 @@
 "use client";
 
+import LazyImage from "@/components/image-holder";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -52,6 +53,7 @@ export default function Replies({ replies }: { replies: ReplyUnionAuthor[] }) {
           </span>
         </p>
         <p className="max-w-full">{rep.reply}</p>
+        <LazyImage src={rep.image_url} />
       </div>
     </div>
   ));

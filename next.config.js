@@ -7,6 +7,14 @@ const nextConfig = {
         remotePatterns: [
             {
                 hostname: "avatars.githubusercontent.com"
+            },
+            //Development
+            {
+                hostname: "qphlqcgpoiqlcykapfsz.supabase.co"
+            },
+            //Production
+            {
+                hostname: "tudvhqxmfdaevrdjxqhu.supabase.co"
             }
         ]
     }

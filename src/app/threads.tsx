@@ -6,6 +6,7 @@ import { experimental_useOptimistic as useOptimistic, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import ReplyButton from "@/components/reply-button";
+import LazyImage from "@/components/image-holder";
 
 export default function Threads({ threads }: { threads: TweetUnionAuthor[] }) {
   const [optimisticThreads, addOptimisticThreads] = useOptimistic<
@@ -67,6 +68,7 @@ export default function Threads({ threads }: { threads: TweetUnionAuthor[] }) {
             </span>
           </p>
           <p className="max-w-full">{thr.thread}</p>
+          <LazyImage src={thr.image_url} />
           <div className="flex items-center gap-3">
             <Likes threads={thr} addOptimisticThread={addOptimisticThreads} />
             <ReplyButton threads={thr} />

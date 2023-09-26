@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { experimental_useOptimistic as useOptimistic } from "react";
 import Likes from "../likes";
+import LazyImage from "@/components/image-holder";
 
 export default function OriginalThreads({
   threads,
@@ -32,6 +33,7 @@ export default function OriginalThreads({
                 <span className="text-sm ml-2 text-gray-400">{thr.author.username}</span>
             </p>
             <p className="max-w-full text-2xl text-left">{thr.thread}</p>
+            <LazyImage src={thr.image_url} />
             <Likes threads={thr} addOptimisticThread={addOptimisticThreads} />
         </div>
     </div>
